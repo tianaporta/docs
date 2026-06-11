@@ -1,0 +1,53 @@
+---
+title: "Scheels"
+description: "Scheels checkout with monitor and watch modes."
+---
+
+## Supported Regions
+
+US
+
+## Task Setup
+
+- **Site** — Scheels
+- **Mode** — Normal, Monitor, or Watch
+- **Keywords/URL** — Product ID (the number at the end of the product URL). For example, if the URL is `https://www.scheels.com/p/zephyr/19872991141/`, the input is `19872991141`. Toggle **Bulk tasks** to paste multiple at once.
+- **Color** *(optional)* — specific color if the product has variants
+- **Size** — specific size or `Random`
+- **Profiles** — pick the profile(s) to use
+- **Task Count** — `match profiles`
+
+## Modes
+
+### Normal (Checkout)
+Runs the standard checkout flow. Adds to cart, fills in profile info, and checks out.
+
+### Monitor (Monitor product)
+Watches a product and pings Watch mode tasks to start when the product restocks. Does not checkout itself.
+
+### Watch (Wait for Monitor ping)
+Waits for a ping from a Monitor mode task to start. Use this paired with Monitor mode for restocks.
+
+## Recommended Setup
+
+The best setup to avoid burning through proxies on restocks:
+
+1. **Run a Monitor task** from the monitors tab — it'll wait for a restock
+2. **Create Watch mode tasks** with your desired settings
+3. When the Monitor detects a restock, it pings the Watch tasks and they run
+
+Alternatively, in the tasks tab, create your tasks, then click the **monitor sub tab** in your task group, create a monitor, and select the tasks you want to run when a restock is detected.
+
+## Notes
+
+- **Use the Product ID, not the full URL** — strip the number from the end of the product page URL
+- **Scheels is strict on IPs and credit cards** — use quality residential proxies and unique profiles per task
+- **One profile per task** is recommended to avoid card flags
+- **Color is optional** — leave blank if the product has only one variant
+
+## Tips
+
+- Don't run all tasks on the same IP — Scheels flags duplicate IPs fast
+- Use unique credit cards across profiles when possible
+- Residential proxies strongly recommended over ISP/Datacenter
+- Pair Monitor + Watch mode for restocks instead of running Normal tasks constantly — saves proxy bandwidth

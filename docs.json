@@ -49,6 +49,7 @@
               "modules/shopify",
               "modules/funko",
               "modules/popmart",
+              "modules/scheels",
               "modules/eql"
             ]
           },
