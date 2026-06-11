@@ -51,6 +51,12 @@
               "modules/popmart",
               "modules/eql"
             ]
+          },
+          {
+            "group": "Drops",
+            "pages": [
+              "drops/index"
+            ]
           }
         ]
       }
