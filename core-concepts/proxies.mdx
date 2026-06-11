@@ -1,0 +1,72 @@
+---
+title: "Proxies"
+description: "How proxies work in Halo and which to use."
+---
+
+## What are Proxies?
+
+Proxies route Halo's requests through different IP addresses so each task looks like it's coming from a separate user. Without proxies, all your tasks hit a site from the same IP, which gets flagged fast on competitive drops.
+
+For most modules, proxies aren't strictly required on small task counts — but on any serious drop, you want them.
+
+## Proxy Types
+
+**ISP** — residential IPs hosted on datacenter infrastructure. Fast and clean. Good default for most sites.
+
+**Residential** — real home/mobile IPs. Most authentic but usually slower and more expensive. Required for the hardest sites (Shopify hyped drops, Footsites, PKC queue).
+
+**Datacenter** — cheapest but most easily detected. Fine for Amazon, gets banned fast on Shopify and Footsites.
+
+## Adding Proxies
+
+<Steps>
+  <Step title="Open the Proxies tab">
+    Head to the **Proxies** tab in the top nav.
+  </Step>
+  <Step title="Create a group">
+    Click the **+** next to **Groups**. Name it after the proxy provider or use case (e.g. `Residential 1`, `ISP US`, `Footsites Pack`).
+  </Step>
+  <Step title="Add proxies">
+    Click **Add Proxies** at the bottom. Paste your proxies, one per line.
+  </Step>
+</Steps>
+
+## Proxy Format
+
+Halo accepts proxies in either format, one per line:
+ip:port
+ip:port:username:password
+
+Examples:
+192.168.1.1:8080
+192.168.1.2:8080:user:pass
+
+Most paid proxies use the `ip:port:username:password` format. Free or self-hosted proxies are usually just `ip:port`.
+
+## Choosing the Right Proxy
+
+| Site / Module | Recommended Proxy |
+|---|---|
+| Amazon | ISP or Datacenter |
+| Pokémon Center | Residential (ISP rarely passes queue) |
+| Best Buy | ISP or Residential |
+| Footsites | Residential |
+| Shopify (hyped) | Residential |
+| Shopify (standard) | ISP |
+| Funko / PopMart | ISP or Residential |
+| EQL | ISP or Residential |
+
+## Tips
+
+- **Don't mix proxy types in the same group.** Keep ISP separate from residential.
+- **Match proxy region to site region.** US proxies for US sites, EU for EU sites.
+- **Rotate providers.** Bad proxies = banned tasks; spreading risk across providers helps.
+- **Test before drops.** Run a low-stakes task to confirm your proxies work before a big release.
+- **More proxies = more spread.** Higher task counts need a bigger proxy pool to avoid IP overlap.
+
+## Managing Proxies
+
+- **Import / Export** — bulk move proxies in and out
+- **Search** — find specific proxies inside a group
+- **Delete** — remove selected proxies
+- Multiple groups let you assign different proxy types to different modules

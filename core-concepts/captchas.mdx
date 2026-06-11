@@ -1,0 +1,90 @@
+---
+title: "Captchas"
+description: "How Halo handles captchas with API-based solvers and built-in AI."
+---
+
+## How Captchas Work in Halo
+
+Halo handles captchas in two ways depending on the module:
+
+- **Built-in AI solver** — modules like Pokémon Center solve captchas automatically with no setup required
+- **Third-party API solvers** — for sites that need external solving (hCaptcha, reCAPTCHA v2/v3, etc.), Halo connects to industry-standard captcha services via API key
+
+The Captcha tab is where you configure those external services and manage solver instances.
+
+## Supported Captcha Services
+
+Halo supports the major captcha solving APIs:
+
+- **CapSolver**
+- **2Captcha**
+- **AntiCaptcha**
+- **CapMonster**
+- **EZ Captcha**
+
+You only need one to get started. Most operators run 1-2 services for redundancy on big drops.
+
+## Configuring API Keys
+
+<Steps>
+  <Step title="Open the Captcha tab">
+    Head to the **Captcha** tab in the top nav.
+  </Step>
+  <Step title="Click API Config">
+    Hit the **API Config** button in the bottom left.
+  </Step>
+  <Step title="Paste your API keys">
+    For each service you have an account with, paste the API key into the matching field. You don't need to fill all of them — one is enough.
+  </Step>
+  <Step title="Save Configuration">
+    Click **Save Configuration**. Services with valid keys will switch from `NOT CONFIGURED` to active.
+  </Step>
+</Steps>
+
+<Note>
+You get API keys from each service's dashboard after creating an account and adding credit. Each provider charges per solved captcha.
+</Note>
+
+## Adding a Solver
+
+Once your API keys are configured, create solver instances to handle captcha load.
+
+<Steps>
+  <Step title="Click + New Solver">
+    From the Captcha tab, hit **+ New Solver** at the bottom.
+  </Step>
+  <Step title="Name the solver">
+    Give it a name (e.g. `Main Solver`, `Backup Solver`).
+  </Step>
+  <Step title="Pick a proxy group (optional)">
+    Select a proxy group to route solver traffic through. Leave blank to use your default connection.
+  </Step>
+  <Step title="Click Add Solver">
+    The solver appears in the list and is ready to use.
+  </Step>
+</Steps>
+
+## Managing Solvers
+
+The Captcha tab shows your solver pool with live stats:
+
+- **Captcha Solvers** count — total solvers configured
+- **Active** — solvers currently working on captchas
+- **Idle** — solvers waiting for work
+- **Start All / Stop All** — control all solvers at once
+- **Start Youtube** — specialized solver for YouTube-style captchas
+- **Delete** — remove selected solvers
+
+## Tips
+
+- **One service is enough to start.** Add more for redundancy on big drops.
+- **CapSolver and 2Captcha are the most popular** — most operators run one of these as primary.
+- **Run multiple solvers on big drops.** More solvers = more parallel captcha solving = less bottleneck on hyped releases.
+- **Proxy your solver traffic** if your captcha service flags rapid requests from a single IP.
+- **Keep your API balance topped up.** Solvers will fail mid-drop if your service runs out of credit.
+
+## Notes
+
+- Halo solves captchas automatically — you don't need to interact with them during tasks
+- Some modules (like Pokémon Center) use Halo's built-in AI solver and don't need an external service
+- Captcha costs are paid directly to the captcha service, not to Halo

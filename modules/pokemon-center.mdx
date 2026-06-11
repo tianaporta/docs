@@ -1,0 +1,66 @@
+---
+title: "Pokémon Center"
+description: "Queue-aware tasks with browser and request modes."
+---
+
+## Supported Regions
+
+US, CA, UK, AU (auto checkout not supported, based on the profile's country).
+
+## Task Setup
+
+- **Site** — PokemonCenter
+- **Mode** — Normal, Request, Queue, Register, or Newsletter
+- **Keywords/URL** — PID or product URL. Toggle **Bulk tasks** to paste multiple at once.
+- **Size** — leave blank if there's no size variant, or use `Random`
+- **Profiles** — pick the profile(s) to use
+
+<Note>
+**Multi-cart:** put multiple SKUs in a single task by separating them with `:` (e.g. `PID1:PID2:PID3`).
+</Note>
+
+## Configuration
+
+- **Proxy Group** — ISP or Residential recommended. Datacenter rarely passes queue.
+- **Delay (ms)** — default `1000` is fine
+- **Tasks Count** — how many tasks to spawn
+- **Cart Quantity** — units per task
+- **Start on Queue** — toggle on to delay task start until a queue is detected
+- **Schedule Task** / **Schedule Stop** — auto-start or auto-stop at a set time
+- **Unlimited Checkout** — keeps retrying checkout until manually stopped
+
+## Modes
+
+### Normal (Standard)
+Opens a browser per task to pass the queue. The browser closes after queue and the task continues to checkout. Browser limit is adjustable in settings.
+
+### Request (Direct)
+Runs without opening a browser. Passes queue and completes checkout via direct requests. Requires an active Queue Monitor task in the same session — Request mode will not work until Queue Monitor detects a live queue.
+
+### Queue (Monitor)
+Monitors for the queue to go live. Triggers Request mode tasks once detected. This mode does not checkout itself.
+
+### Register (Create Account)
+Creates new Pokémon Center accounts. Use before drops if you need fresh accounts.
+
+### Newsletter (Subscribe)
+Subscribes profiles to the Pokémon Center newsletter.
+
+## Recommended Setup
+
+- Create tasks with empty input if the PID isn't known yet — you can inject it later
+- Around 10 Normal mode tasks (adjust based on PC specs)
+- 1 Queue Monitor task
+- Unlimited Request mode tasks
+- Start tasks once the queue goes live
+
+<Note>
+You can inject the PID/URL on the fly using **Edit → Inject Keyword** without stopping the task, so you don't lose your queue position.
+</Note>
+
+## Notes
+
+- Captchas are solved automatically by Halo's AI-powered solver — no manual solving needed
+- Residential proxies are recommended over ISP for PKC
+- Requeues are normal — don't panic
+- Auto-checkout is not supported in CA, UK, AU

@@ -1,0 +1,90 @@
+---
+title: "PopMart"
+description: "PopMart drops, PopNow, and account management across all regions."
+---
+
+## Overview
+
+Halo's PopMart module covers standard drops, PopNow blind box pulls, in-store pickup, and full account management (generator, address cleanup, order cancellation) across every regional PopMart storefront.
+
+## Supported Sites
+
+- **PopMartAT** — Austria
+- **PopMartAU** — Australia
+- **PopMartBE** — Belgium
+- **PopMartBR** — Brazil
+- **PopMartCA** — Canada
+- **PopMartCZ** — Czech Republic
+- **PopMartDE** — Germany
+- **PopMartDK** — Denmark
+- **And more across EU, APAC, and Americas** — search the Site picker for the one you need
+
+<Note>
+Each region is its own site. Match your profile country to the storefront for cleanest checkouts.
+</Note>
+
+## Account Setup
+
+PopMart tasks **require** an account.
+
+<Steps>
+  <Step title="Create an account group">
+    Head to the **Accounts** tab in Halo. Click the **+** to create a new group. Name it (e.g. `PopMart 1`) and pick **PopMart** as the account type. Hit **Confirm**.
+  </Step>
+  <Step title="Paste your accounts">
+    Click **Add Accounts** and paste in `email:password` format, one per line.
+  </Step>
+  <Step title="Or generate accounts">
+    Use **Generator** mode (below) to create accounts directly inside Halo.
+  </Step>
+</Steps>
+
+## Task Setup
+
+- **Site** — pick the PopMart regional storefront (e.g. `PopMartCA`, `PopMartAU`)
+- **Mode** — Normal, PopNow, Generator, Store Pickup, Browser, Delete Addresses, or Cancel Orders
+- **PID** — product ID. Toggle **Bulk tasks** to paste multiple at once.
+- **Size** — leave blank or use `Random` if there's no size variant
+- **Profiles** — pick the profile(s) to use
+- **Accounts** *(Required)* — pick the logged-in PopMart account(s)
+- **Task Count** — `match accounts` or `match profiles`
+
+## Modes
+
+### Normal (Standard)
+Standard checkout flow. Adds the PID to cart and checks out using the account's saved payment.
+
+### PopNow
+For PopNow blind box releases. Halo handles the PopNow flow (box selection + checkout) automatically.
+
+### Generator (Account Generator)
+Creates new PopMart accounts directly inside Halo. Useful for spinning up fresh accounts before a big drop.
+
+### Store Pickup (In-Store)
+Checks out using in-store pickup instead of shipping. Picks the nearest store to the profile's address.
+
+### Browser (URL)
+Opens a browser session for manual handling. Useful for edge-case drops or troubleshooting.
+
+### Delete Addresses (Cleanup)
+Removes saved addresses from PopMart accounts. Useful for cleaning up after testing or before reusing accounts.
+
+### Cancel Orders (Cancel Pending Orders)
+Cancels any pending orders on the selected accounts. Useful for clearing failed or unwanted checkouts.
+
+## Recommended Setup
+
+- **Standard drops:** Normal mode, one task per account
+- **PopNow drops:** PopNow mode, one task per account
+- **Account prep:** Generator mode to spin up accounts a day before the drop
+- **Proxies:** ISP or Residential recommended
+- **Delays:** default values are fine
+- Match profile country to the PopMart regional site
+
+## Notes
+
+- PopMart enforces strict per-account purchase limits — running multiple tasks on one account won't help
+- More accounts = more chances on hyped drops
+- PopNow pulls are randomized; running more accounts increases your chance of pulling chase figures
+- Halo handles captchas automatically
+- Use Delete Addresses + Cancel Orders modes for account hygiene between drops

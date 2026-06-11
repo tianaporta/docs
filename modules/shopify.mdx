@@ -1,0 +1,53 @@
+---
+title: "Shopify"
+description: "Multi-site Shopify checkout with safe, fast, and mobile modes."
+---
+
+## Overview
+
+Halo supports thousands of Shopify sites out of the box (100Thieves, Concepts, BBC Ice Cream, Kith, and many more). Each site is listed individually under the **Site** picker in the task creation modal.
+
+## Task Setup
+
+- **Site** — search and pick the specific Shopify store (e.g. `100Thieves`, `1234gorecords`, `303boards`)
+- **Mode** — Normal, Safe, Fast, Super Safe, or App
+- **Keywords/URL** — product keyword, variant ID, or full product URL. Toggle **Bulk tasks** to paste multiple at once.
+- **Size** — specific size, or `Random` for the first available
+- **Profiles** *(Required)* — pick the profile(s) to use
+- **Accounts** — only required if the site needs login
+- **Task Count** — `match accounts` or `match profiles`
+
+<Note>
+Drop guides will usually tell you exactly which keyword or variant to use. When in doubt, paste the full product URL.
+</Note>
+
+## Modes
+
+### Normal (Safe Preload)
+Standard mode with safe site preloading. Good default for most drops.
+
+### Safe (Password Page)
+For sites that go live behind a password page. Halo waits for the page to drop and proceeds.
+
+### Fast (Speed)
+Fastest checkout flow. Best for sites without strong bot detection. Higher risk on protected sites.
+
+### Super Safe (Browser Add to Cart)
+Uses a browser to add to cart before switching to API checkout. Slowest but the safest against bot detection.
+
+### App (Mobile)
+Mimics the Shopify mobile app flow. Useful when sites lock down web checkout but allow app traffic.
+
+## Recommended Setup
+
+- **Standard drops:** Normal or Fast mode
+- **Password page drops:** Safe mode
+- **Heavily protected sites (e.g. Kith, Concepts):** Super Safe or App mode
+- **Proxies:** Residential strongly recommended for protected sites, ISP fine for smaller stores
+- **Delays:** Default values are fine; lower delays = higher risk
+
+## Notes
+
+- Halo supports thousands of Shopify stores — use the search bar in the Site picker to find yours
+- Variant IDs are faster than keywords, but keywords work fine for most drops
+- Some stores require account login (check the drop guide); toggle Accounts on when needed

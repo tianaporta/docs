@@ -1,0 +1,49 @@
+---
+title: "Accounts"
+description: "Site logins for tasks that require an authenticated session."
+---
+
+## What are Accounts?
+
+Accounts are the logins Halo uses to checkout on sites that require authentication. Sites like Best Buy, Funko, EQL, PopMart, and Amazon all need accounts — you'll get a `(Required)` flag in the task setup when one is needed.
+
+Accounts in Halo are grouped by site, so all your Best Buy accounts live in one group, all your Funko accounts in another, and so on.
+
+## Adding Accounts
+
+<Steps>
+  <Step title="Open the Accounts tab">
+    Head to the **Accounts** tab in the top nav.
+  </Step>
+  <Step title="Create a group">
+    Click the **+** next to **Groups**. Name your group (e.g. `BestBuy 1`, `Funko EU`) and pick the **Account Type** from the dropdown — this needs to match the site you'll use the accounts on.
+  </Step>
+  <Step title="Add accounts">
+    Click **+ New Account** at the bottom. Paste your accounts in the format `email:password`, one per line. Then click **Add Accounts**.
+  </Step>
+</Steps>
+
+<Note>
+Account types are site-specific. A PopMart account group can only be used on PopMart tasks, a Funko group on Funko tasks, etc.
+</Note>
+
+## Managing Accounts
+
+- **Import / Export** — bulk move accounts in and out using the buttons in the top right
+- **Search** — find specific accounts inside a group
+- **Actions** — bulk actions like delete or move between groups
+- **Delete** — remove selected accounts
+
+## Account Format
+
+Halo expects accounts in this format, one per line:
+account@example.com:password
+account2@example.com:password2
+account3@example.com:password3
+
+## Tips
+
+- **Match account region to site region.** A PopMartCA account won't work on PopMartUS, etc.
+- **Aged accounts perform better** than fresh ones on raffles and limited drops
+- **Keep groups organized by site** — don't mix BestBuy and Funko accounts in one group
+- **Quality > quantity** on raffle drops; flagged accounts won't checkout no matter how many tasks you run

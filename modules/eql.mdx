@@ -1,0 +1,42 @@
+---
+title: "EQL"
+description: "EQL raffle entry automation."
+---
+
+## Overview
+
+EQL runs raffle-style releases for hyped sneaker and apparel drops. Halo automates raffle entries across multiple accounts so you get more shots at winning.
+
+## Account Setup
+
+EQL tasks **require** an account.
+
+<Steps>
+  <Step title="Create an account group">
+    Head to the **Accounts** tab in Halo. Click the **+** to create a new group. Name it (e.g. `EQL 1`) and pick **EQL** as the account type. Hit **Confirm**.
+  </Step>
+  <Step title="Paste your accounts">
+    Click **Add Accounts** and paste in `email:password` format, one per line.
+  </Step>
+</Steps>
+
+## Task Setup
+
+- **Site** — EQL
+- **Item URL** — the full URL of the EQL raffle page. Toggle **Bulk tasks** to paste multiple URLs at once.
+- **Size** — specific size, or `Random` for any
+- **Profiles** — pick the profile(s) to use
+- **Accounts** *(Required)* — pick the EQL account(s) to enter with
+- **Task Count** — `match accounts` (one entry per account) or `match profiles`
+
+## Recommended Setup
+
+- One task per account — more accounts = more raffle entries = better odds
+- Use unique profiles per account when possible to avoid duplicate-entry flags
+- Proxies: ISP or Residential recommended
+
+## Notes
+
+- EQL is a raffle, not a first-come-first-served checkout — running 50 tasks on one account won't help you, but 50 accounts with 1 task each will
+- Account quality matters; aged accounts perform better than fresh ones
+- Halo will only enter the raffle; winning still depends on the EQL draw

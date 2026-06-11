@@ -1,0 +1,110 @@
+---
+title: "Settings"
+description: "License, performance, notifications, and integrations."
+---
+
+The **Settings** tab manages everything outside of tasks — your license, browser config, delays, Discord webhooks, and third-party integrations. Four tabs: General, Performance, Notification, Integrations.
+
+## General
+
+The General tab handles license management, version info, and full setup backups.
+
+### License Details
+
+Shows your active Halo license key, status, and expiration date.
+
+- **License Key** — your active key (status shows `Active` when valid)
+- **Expiration Date** — when your subscription renews
+- **Deactivate License** — sign out of this device. Use this if you're moving Halo to a new machine.
+
+<Warning>
+Deactivating your license signs you out of this device. You'll need to reactivate with your key to use Halo again on this machine.
+</Warning>
+
+### Application Status
+
+- **Current Version** — the version of Halo you're running
+- **Check for Updates** — manually check for new releases
+- **System Status** — green `Online` means everything is connected and ready
+
+### Backup & Restore
+
+The setup file lets you export everything (tasks, profiles, accounts, proxies, monitors, IMAP, captchas, settings, success) into one file and restore it on another device.
+
+- **Export Setup** — download a full backup
+- **Import Setup** — restore from a backup file
+
+<Note>
+Use this when moving to a new computer, before reinstalling, or to share a setup with a teammate.
+</Note>
+
+## Performance
+
+The Performance tab controls how Halo interacts with your browser and how aggressive task timing is.
+
+### Browser Configuration
+
+- **Browser Path** — where Chrome (or Edge) is installed on your machine. Halo auto-detects this on first launch.
+- **Test Open Browser** — opens Chrome to confirm the path works
+- **Test Open Edge** — same test for Microsoft Edge
+- **Reset Default Path** — resets to Halo's default Chrome path
+- **Open Browsers** — max number of browsers Halo can open at once. Higher = more parallel tasks, but more CPU/RAM usage. Default is 8.
+
+<Note>
+If browser tasks aren't launching, double-check the Browser Path and hit **Test Open Browser**.
+</Note>
+
+### Delay Configuration
+
+- **General Task Delays** — default delay (in ms) between task retries. Lower = more aggressive, higher = safer.
+- **Delay for Starting Tasks** — staggers task starts to avoid hitting a site with a wall of simultaneous requests. Default `10` ms is fine.
+
+## Notification
+
+The Notification tab handles Discord webhook alerts for successful checkouts.
+
+### Discord Webhooks
+
+- **Success Webhook** — paste your Discord webhook URL here. Halo will post every successful checkout to that channel.
+- **Test** — sends a test message to confirm the webhook works
+
+### Privacy Options
+
+Toggle which fields are hidden in the webhook message:
+
+- **Hide Order ID** — keeps order numbers private
+- **Hide Proxy** — hides which proxy was used
+- **Hide Account** — hides which account checked out
+- **Hide Profile** — hides which profile was used
+
+<Note>
+Privacy options are useful if you're posting in a shared cookgroup or partner channel and don't want to leak sensitive info.
+</Note>
+
+## Integrations
+
+The Integrations tab connects Halo to third-party services like AYCD Inbox.
+
+### AYCD Inbox
+
+AYCD Inbox is a managed email service for receiving verification codes and checkout links. If you use AYCD, plug your API key in here and Halo will pull codes directly from your AYCD Inbox accounts.
+
+<Steps>
+  <Step title="Paste your API key">
+    Enter your AYCD Inbox API key and click **Save**.
+  </Step>
+  <Step title="Add inbox accounts">
+    Use **Add** to add a single AYCD inbox email, or **Bulk** to add multiple at once.
+  </Step>
+</Steps>
+
+<Note>
+You don't need AYCD Inbox — it's an optional integration. Halo's built-in IMAP works fine for most setups. AYCD is useful if you already use it for other bots and want everything centralized.
+</Note>
+
+## Tips
+
+- **Set your Open Browsers limit based on your machine.** 8 is fine for most setups; bump higher only if your PC can handle it.
+- **Hook up Discord webhooks early.** Knowing instantly when a checkout hits is a big quality-of-life upgrade.
+- **Export your setup before any major change** (reinstall, new computer, big update). Restoring is faster than rebuilding.
+- **Keep Halo updated.** Check for updates regularly — modules and fixes ship constantly.

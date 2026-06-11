@@ -1,0 +1,106 @@
+---
+title: "Amazon"
+description: "ASIN-based checkout with monitor, watch, and address filler modes."
+---
+
+## Supported Regions
+
+Amazon is split into one site per region. Pick the one that matches your account and ASIN:
+
+- **AmazonAU** — Australia
+- **AmazonBE** — Belgium
+- **AmazonCA** — Canada
+- **AmazonDE** — Germany
+- **AmazonES** — Spain
+- **AmazonFR** — France
+- **AmazonIN** — India
+- **AmazonIT** — Italy
+- **AmazonJP** — Japan
+- **AmazonMX** — Mexico
+- **AmazonNL** — Netherlands
+- **AmazonPL** — Poland
+- **AmazonUK** — United Kingdom
+- **AmazonUS** — United States
+
+## Account Setup
+
+Amazon tasks require an account. Add yours in the **Accounts** tab with email, password, and account code (the 6-digit 2FA code if enabled).
+
+Run the account in **Login** mode to authenticate through a browser. You can close the browser after login, but keeping it open helps avoid login issues during checkout.
+
+## Amazon 2FA Setup
+
+Setting up a 2FA secret on your Amazon account lets Halo skip the 2FA prompt during account login. This makes tasks faster and avoids login interruptions during drops.
+
+<Steps>
+  <Step title="Open your Amazon account settings">
+    Log into your Amazon account and head to **Account**.
+  </Step>
+  <Step title="Open Login & Security">
+    Click the **Login & Security** tab.
+  </Step>
+  <Step title="Turn on 2-Step Verification">
+    Find the 2-Step Verification row and click **Turn On**. On the next page, click **Get Started**.
+  </Step>
+  <Step title="Choose Authenticator App">
+    Select the **Authenticator App** option, then click **Can't Scan the Barcode**.
+  </Step>
+  <Step title="Save the secret key">
+    Copy the key Amazon shows you and save it somewhere safe. You'll paste this into Halo.
+  </Step>
+  <Step title="Scan the QR code">
+    Open your preferred authenticator app (Google Authenticator, Authy, etc.) and scan the QR code Amazon displays.
+  </Step>
+  <Step title="Verify the code">
+    Enter the 6-digit code from your authenticator app and click **Verify OTP and continue** to finish Amazon's setup.
+  </Step>
+  <Step title="Add the key to Halo">
+    Head to the **Accounts** tab in Halo. Create or edit the matching Amazon account and paste the saved key into the **2FA Secret** field.
+  </Step>
+</Steps>
+
+<Warning>
+Save your 2FA secret somewhere safe. If you lose it and lose access to your authenticator app, you'll lock yourself out of the Amazon account.
+</Warning>
+
+## Task Setup
+
+- **Site** — pick the Amazon region matching your account (e.g. AmazonUS)
+- **Mode** — Normal, Fast, Offer, ASIN, or Address
+- **ASIN** — the product ASIN (not the full URL). Toggle **Bulk tasks** to paste multiple ASINs at once.
+- **Size** — leave blank or set to `Random` if the product has no size variant
+- **Profiles** — pick the profile(s) to use
+- **Accounts** *(Required)* — pick the logged-in Amazon account(s)
+- **Task Count** — choose `match accounts` (one task per account) or `match profiles` (one task per profile)
+
+<Note>
+Proxies: ISP or Datacenter recommended. Delays: default values are fine.
+</Note>
+
+## Modes
+
+### Normal (Standard)
+Standard checkout mode. Best balance of speed and safety. Use this as your default.
+
+### Fast (Quick)
+Faster than Normal. Higher risk of flags or blocks. Not recommended on fresh or weak accounts.
+
+### Offer (Monitor)
+Continuously monitors an ASIN + Offer ID combo for restocks. Run at least one Offer task per ASIN and Offer ID. Set delay to 6000 ms or higher.
+
+### ASIN (Watch)
+Continuously monitors an ASIN for restocks. No Offer ID required. Set delay to 6000 ms or higher. You can run multiple ASIN tasks for the same product.
+
+### Address (Filler)
+Fills the selected profile address into the selected Amazon account. Useful for setting up new accounts before a drop.
+
+## Recommended Setup
+
+1-2 Monitor tasks (Offer or ASIN mode) per item. Multiple Normal or Fast tasks for checkout. Use the same ASIN across all tasks. Keep Request Login Refresh OFF. Set Max Checkout if running many tasks.
+
+## Notes
+
+- ASIN is required — full product URLs won't work
+- Unlimited Checkout keeps retrying until you stop the task
+- Proxies improve success and reduce account flags
+- Amazon is sensitive to frequent refreshes and re-logins — keep delays reasonable

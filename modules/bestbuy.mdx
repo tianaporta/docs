@@ -1,0 +1,67 @@
+---
+title: "Best Buy"
+description: "SKU checkout with restock watch, queue monitor, and invite entry modes."
+---
+
+## Supported Regions
+
+US
+
+## Account Setup
+
+Best Buy tasks require an account.
+
+<Steps>
+  <Step title="Create an account group">
+    Head to the **Accounts** tab in Halo. Click the **+** to create a new group. Name it (e.g. `Bestbuy 1`) and pick **Bestbuy** as the account type. Hit **Confirm**.
+  </Step>
+  <Step title="Paste your accounts">
+    Click **Add Accounts** and paste your accounts in `email:password` format, one per line.
+  </Step>
+  <Step title="Set up IMAP">
+    Add the IMAP for each account in the **IMAP** tab and make sure it's running. Best Buy frequently sends verification codes or password resets that Halo needs to pull from email. See the [IMAP guide](/core-concepts/imap) for setup.
+  </Step>
+</Steps>
+
+## Task Setup
+
+- **Site** — Bestbuy
+- **Mode** — Normal, Invite Entry, Queue, or Restock
+- **SKU** — Product SKU (not the ID in the URL — use the SKU listed in the product specifications). Toggle **Bulk tasks** to paste multiple at once.
+- **Size** — leave blank or use `Random` if there's no size variant
+- **Profiles** *(Required)* — pick the profile(s) to use
+- **Accounts** *(Required)* — pick the logged-in Best Buy account(s)
+- **Task Count** — `match accounts` (one task per account) or `match profiles` (one task per profile)
+
+<Note>
+Billing uses the payment method and address saved on the Best Buy account. **Credit Card only** — other payment types are not supported.
+</Note>
+
+## Modes
+
+### Normal (Standard)
+Runs the standard checkout flow. Keeps retrying to add to cart if the item is out of stock.
+
+### Invite Entry (Invite)
+Used for Best Buy invite-only drops. Enters the invite flow using the account.
+
+### Queue (Monitor)
+Monitors an SKU for a queue. Triggers Normal tasks (with Wait for Queue enabled) when a queue is detected. Does not checkout itself.
+
+### Restock (Watch)
+Monitors an SKU for restocks. Triggers Normal tasks (with Wait for Restock enabled) when the item comes back in stock.
+
+## Recommended Setup
+
+- Use Normal mode tasks for checkout
+- Add a Restock Watch task per SKU to catch restocks
+- Add a Queue Monitor task if the item has a queue
+- Keep input SKUs consistent across all tasks for the same product
+- Proxies: ISP or Residential recommended
+- Delays: default values are fine
+
+## Notes
+
+- Only Credit Card payment is currently supported
+- IMAP must be running on the account — drops will stall without it
+- SKU is required (the number in the URL is the product ID, not the SKU)

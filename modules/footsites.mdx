@@ -1,0 +1,56 @@
+---
+title: "Footsites"
+description: "Foot Locker, Champs, Eastbay, and Footaction across all regions."
+---
+
+## Overview
+
+Halo's Footsites module covers the full Foot Locker family of sites across every supported region. Built on NSB legacy infrastructure, it's one of Halo's most battle-tested modules.
+
+## Supported Sites
+
+- **ChampsSport** — US
+- **ChampsSportsCA** — Canada
+- **Footlocker** — US
+- **FootlockerAU** — Australia
+- **FootlockerAustria** — Austria
+- **FootlockerBelgium** — Belgium
+- **FootlockerCA** — Canada
+- **FootlockerCzechRepublic** — Czech Republic
+- **And more across EU and APAC regions** — search the Site picker for the one you need
+
+<Note>
+Each region is its own site. Pick the one that matches both your profile country and the drop.
+</Note>
+
+## Task Setup
+
+- **Site** — pick the specific Footsite (e.g. `Footlocker`, `ChampsSport`, `FootlockerCA`)
+- **Mode** — Normal or GC Balance Check
+- **PID** — product ID. Toggle **Bulk tasks** to paste multiple PIDs at once.
+- **Size** — specific size, or `Random` for the first available
+- **Profiles** *(Required)* — pick the profile(s) to use
+- **Accounts** — optional, toggle on if running with logged-in accounts
+- **Task Count** — `match accounts` or `match profiles`
+
+## Modes
+
+### Normal (Fast)
+Standard fast checkout flow. Default mode for Footsite drops — handles queue, checkout, and payment.
+
+### GC Balance Check (Gift Card)
+Checks the remaining balance on a gift card. Useful before a drop if you're planning to pay with GC and want to confirm available funds.
+
+## Recommended Setup
+
+- **PID over keyword:** always use the product ID — Footsites are PID-driven
+- **Proxies:** Residential strongly recommended; ISP works but residential lands more checkouts on hyped drops
+- **Delays:** default values are fine
+- **Profiles:** match the profile country to the site (e.g. US profiles for Footlocker, CA profiles for FootlockerCA)
+
+## Notes
+
+- Footsites split inventory by region — running US tasks on CA stock won't work
+- The same PID can exist across multiple regional Footsites; check the drop guide for which to run
+- Halo handles queue, captcha, and checkout automatically
+- Gift card payment is supported on most Footsites

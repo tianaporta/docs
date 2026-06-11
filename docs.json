@@ -1,11 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Halo Help Desk",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#3B82F6",
+    "light": "#3B82F6",
+    "dark": "#080C14"
   },
   "favicon": "/favicon.svg",
   "navigation": {
@@ -14,10 +14,42 @@
         "tab": "Guides",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Get Started",
             "pages": [
-              "welcome-to-halo",
-              "untitled-page"
+              "welcome",
+              "quick-start",
+              "whop-setup",
+              "installation"
+            ]
+          },
+          {
+            "group": "Core Concepts",
+            "pages": [
+              "core-concepts/profiles",
+              "core-concepts/accounts",
+              "core-concepts/proxies",
+              "core-concepts/imap",
+              "core-concepts/captchas",
+              "core-concepts/monitors"
+            ]
+          },
+          {
+            "group": "Settings",
+            "pages": [
+              "settings"
+            ]
+          },
+          {
+            "group": "Modules",
+            "pages": [
+              "modules/amazon",
+              "modules/pokemon-center",
+              "modules/bestbuy",
+              "modules/footsites",
+              "modules/shopify",
+              "modules/funko",
+              "modules/popmart",
+              "modules/eql"
             ]
           }
         ]
@@ -31,33 +63,31 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "Discord",
+        "href": "https://discord.gg/halo"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Get Halo",
+      "href": "https://whop.com/joined/halo-bot/get-your-key-CJivB2gmRUCHEk/app/"
     }
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "discord": "https://discord.gg/halo"
     }
   }
 }

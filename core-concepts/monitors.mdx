@@ -1,0 +1,89 @@
+---
+title: "Monitors"
+description: "Watch sites for restocks, new product drops, and price changes — then auto-trigger tasks."
+---
+
+## What are Monitors?
+
+Monitors watch a site (or a specific product) in the background and trigger tasks the moment something changes — a restock, a new product, a price drop. Instead of manually creating tasks the second a drop happens, monitors keep you ahead of the release.
+
+Pair them with **Quick Task Preset** to auto-spawn tasks when the monitor detects something, and **Live Feed** to see what monitors are picking up in real time.
+
+## Creating a Monitor Group
+
+<Steps>
+  <Step title="Open the Monitors tab">
+    Head to the **Monitors** tab in the top nav.
+  </Step>
+  <Step title="Create a group">
+    Click the **+** next to **Groups**. Name it (e.g. `PKC Restock Watch`, `Shopify Drops`) and pick the **Monitor Type** from the dropdown — this matches the site you want to monitor.
+  </Step>
+  <Step title="Click Confirm">
+    Your group is ready. Now add monitors to it.
+  </Step>
+</Steps>
+
+## Creating a Monitor
+
+<Steps>
+  <Step title="Click + New Monitor">
+    From inside your monitor group, hit **+ New Monitor** at the bottom.
+  </Step>
+  <Step title="Fill in monitor details">
+    - **Monitor Name** — internal name (e.g. `Charizard ex Restock`)
+    - **Site** — the site to watch (or `ALL` to monitor across all sites in the group's type)
+    - **Mode** — Normal (Safe Preload), Safe (Password page), Fast (Speed), Super Safe (Browser add to cart), or App (Mobile)
+    - **Proxy Group** — proxies for the monitor to use
+    - **Keywords/URL** — the keyword or product URL to watch for
+    - **Sizes** — specific sizes or `Random`
+    - **Profiles** — profile(s) to attach
+    - **Tasks Count** — how many tasks to auto-spawn when the monitor triggers
+    - **Quantity** — units per spawned task
+  </Step>
+  <Step title="Click Create Monitor">
+    The monitor is added to your group. Click **Start** to begin watching.
+  </Step>
+</Steps>
+
+## Monitor Controls
+
+The bottom of the Monitors page has all the controls:
+
+- **+ New Monitor** — create a new monitor
+- **Start / Stop** — start or stop selected monitors
+- **Delete** — remove selected monitors
+- **Edit** — change monitor settings
+- **Quick Task Preset** — pre-configure how tasks should spawn when the monitor triggers (mode, profiles, accounts, etc.)
+- **Live Feed** — real-time view of what your monitors are picking up
+- **Set Proxies** — assign or change the proxy group for selected monitors
+
+## Quick Task Preset
+
+The **Quick Task Preset** is the bridge between a monitor finding something and tasks actually running. When you set up a preset, Halo knows exactly how to spawn tasks the moment the monitor fires.
+
+Set the preset once with your preferred mode, profiles, accounts, and task count — then any monitor in that group will auto-spawn tasks matching that preset when it detects a product.
+
+## Live Feed
+
+The Live Feed shows everything your monitors are catching as it happens — new products, restocks, price changes, queue detection. Useful for:
+
+- **Watching a drop unfold** in real time
+- **Catching missed products** that didn't match your keyword exactly
+- **Debugging** why a monitor might not be triggering tasks
+
+## Recommended Setup
+
+- **One monitor group per site or use case** — easier to manage than a single mega-group
+- **Set Quick Task Preset before drops** so tasks spawn instantly when the monitor triggers
+- **Use ALL site mode** for broad watches (e.g. "any Charizard restock across all Shopify sites")
+- **Use specific site mode** for targeted watches (e.g. "PKC Charizard ex restock only")
+- **Pair with Live Feed** during big drops to see what's hitting in real time
+- **Match proxy quality to the site** — same proxy rules as tasks apply
+
+## Tips
+
+- Monitors run continuously — they don't stop until you stop them
+- More monitors = more requests = more proxy usage; budget accordingly on hyped drops
+- A flaky proxy will give you false negatives (missed restocks); good proxies matter
+- If a monitor isn't triggering, check the Live Feed — it'll show what the monitor is actually seeing
+- Quick Task Preset is the difference between a useful monitor and just a fancy alert system
